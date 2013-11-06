@@ -1,0 +1,122 @@
+# Defines the grammar for propositional logic formulas.
+grammar PropositionalLogic
+  rule statement
+    formula
+  end
+
+  rule formula
+    implication
+    /
+    disjunction
+    /
+    conjunction
+    /
+    unit
+  end
+
+  rule not
+    'not ' / '!' / '¬'
+  end
+
+  rule conjunction
+    left:unit and right:(conjunction / unit) {
+      def to_ast
+        Propose::Tree::Conjunction.new(left.to_ast, right.to_ast)
+      end
+    }
+  end
+
+  rule and
+    ' and ' / '∧' / '&'
+  end
+
+  rule disjunction
+    left:(conjunction / unit) or right:(disjunction / conjunction / unit) {
+      def to_ast
+        Propose::Tree::Disjunction.new(left.to_ast, right.to_ast)
+      end
+    }
+  end
+
+  rule or
+    ' or ' / '∨' / '|' / 'v'
+  end
+
+  rule implication
+    left:(disjunction / conjunction / unit) imply right:formula {
+      def to_ast
+        Propose::Tree::Implication.new(left.to_ast, right.to_ast)
+      end
+    }
+  end
+
+  rule imply
+    '=>' / '->' / ' imply ' / ' implies '
+  end
+
+  rule unit
+    literal
+    /
+    bracketed_formula
+    /
+    not bracketed_formula {
+      def to_ast
+        Propose::Tree::Negation.new(bracketed_formula.to_ast)
+      end
+    }
+  end
+
+  rule bracketed_formula
+    '(' formula ')' {
+      def to_ast
+        formula.to_ast
+      end
+    }
+  end
+
+  rule literal
+    not atom {
+      def to_ast
+        Propose::Tree::Negation.new(atom.to_ast)
+      end
+    }
+    /
+    atom
+    /
+    verum
+    /
+    falsum
+  end
+
+  rule atom
+    name:[a-z]+ {
+      def to_ast
+        Propose::Tree::Atom.new(name.text_value.to_sym)
+      end
+    }
+  end
+
+  rule verum
+    'T' {
+      def to_ast
+        Propose::Tree::Verum.instance
+      end
+    }
+  end
+
+  rule falsum
+    'F' {
+      def to_ast
+        Propose::Tree::Falsum.instance
+      end
+    }
+  end
+
+  rule sequent
+    (formula ',')* formula '⊢' formula {
+      def to_ast
+        # TODO: Sequent consists of one or more Premises and a Conclusion
+      end
+    }
+  end
+end
