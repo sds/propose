@@ -17,7 +17,7 @@ grammar PropositionalLogic
   end
 
   rule not
-    'not ' / '!' / '¬'
+    _? ('not' _ / '!' / '¬') _?
   end
 
   rule conjunction
@@ -29,7 +29,9 @@ grammar PropositionalLogic
   end
 
   rule and
-    ' and ' / '∧' / '&'
+    _ 'and' _
+    /
+    _? ('∧' / '&') _?
   end
 
   rule disjunction
@@ -41,7 +43,9 @@ grammar PropositionalLogic
   end
 
   rule or
-    ' or ' / '∨' / '|' / 'v'
+    _ 'or' _
+    /
+    _? ('∨' / '|') _?
   end
 
   rule implication
@@ -53,7 +57,9 @@ grammar PropositionalLogic
   end
 
   rule imply
-    '=>' / '->' / ' imply ' / ' implies '
+    _? ('=>' / '->') _?
+    /
+    _ ('imply' / 'implies') _
   end
 
   rule unit
@@ -69,7 +75,7 @@ grammar PropositionalLogic
   end
 
   rule bracketed_formula
-    '(' formula ')' {
+    '(' _? formula _? ')' {
       def to_ast
         formula.to_ast
       end
@@ -115,21 +121,27 @@ grammar PropositionalLogic
   end
 
   rule sequent
-    premises:premise_list _ proves _ conclusion:formula {
+    premises:premise_list proves conclusion:formula {
       def to_ast
         Propose::Tree::Sequent.new(premises.to_a, conclusion.to_ast)
       end
     }
     /
-    proves _ formula {
+    proves formula {
       def to_ast
         Propose::Tree::Sequent.new([], formula.to_ast)
       end
     }
   end
 
+  rule proves
+    _? 'proves' _
+    /
+    _? ('⊢' / '|-') _?
+  end
+
   rule premise_list
-    premise:formula _ ','? _ list:premise_list {
+    premise:formula comma list:premise_list {
       def to_a
         [premise.to_ast] + list.to_a
       end
@@ -142,11 +154,11 @@ grammar PropositionalLogic
     }
   end
 
-  rule proves
-    'proves' / '⊢' / '|-'
+  rule comma
+    _? ',' _?
   end
 
   rule _
-    ' '*
+    [\s]+
   end
 end

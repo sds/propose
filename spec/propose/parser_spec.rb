@@ -328,16 +328,6 @@ describe Propose::Parser do
       end
 
       context 'containing multiple premises' do
-        let(:code) { 'p q proves r' }
-
-        it do
-          should == Propose::Tree::Sequent.new([Propose::Tree::Atom.new(:p),
-                                                Propose::Tree::Atom.new(:q)],
-                                               Propose::Tree::Atom.new(:r))
-        end
-      end
-
-      context 'containing multiple premises separated by commas' do
         let(:code) { 'p, q and r proves s' }
 
         it do
