@@ -1,6 +1,9 @@
 require 'treetop'
 
 module Propose
+  # Raised when the parser is unable to parse the input.
+  class ParseError < StandardError; end
+
   # Parses a propositional logic statement into an abstract syntax tree.
   class Parser
     GRAMMAR_FILE = File.expand_path(File.join(File.dirname(__FILE__),
@@ -10,7 +13,11 @@ module Propose
     class << self
       def parse(string)
         tree = parser.parse(string)
-        tree.to_ast if tree
+        if tree
+          tree.to_ast
+        else
+          raise ParseError, parser.failure_reason
+        end
       end
 
     private

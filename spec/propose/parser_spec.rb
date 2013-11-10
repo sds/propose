@@ -6,7 +6,10 @@ describe Propose::Parser do
 
     context 'with an empty string' do
       let(:code) { '' }
-      it { should be_nil }
+
+      it 'raises parse error' do
+        expect { subject }.to raise_error Propose::ParseError
+      end
     end
 
     context 'with an atom' do
