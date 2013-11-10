@@ -8,6 +8,7 @@ require 'propose/tree/implication'
 require 'propose/tree/atom'
 require 'propose/tree/unary_operation'
 require 'propose/tree/negation'
+require 'propose/tree/sequent'
 require 'propose/tree/verum'
 
 require 'propose/version'

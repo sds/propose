@@ -304,5 +304,48 @@ describe Propose::Parser do
         end
       end
     end
+
+    context 'with a sequent' do
+      context 'containing no premises' do
+        let(:code) { 'proves p' }
+
+        it do
+          should == Propose::Tree::Sequent.new([],
+                                               Propose::Tree::Atom.new(:p))
+        end
+      end
+
+      context 'containing a single premise' do
+        let(:code) { 'p proves q' }
+
+        it do
+          should == Propose::Tree::Sequent.new([Propose::Tree::Atom.new(:p)],
+                                               Propose::Tree::Atom.new(:q))
+        end
+      end
+
+      context 'containing multiple premises' do
+        let(:code) { 'p q proves r' }
+
+        it do
+          should == Propose::Tree::Sequent.new([Propose::Tree::Atom.new(:p),
+                                                Propose::Tree::Atom.new(:q)],
+                                               Propose::Tree::Atom.new(:r))
+        end
+      end
+
+      context 'containing multiple premises separated by commas' do
+        let(:code) { 'p, q and r proves s' }
+
+        it do
+          should == Propose::Tree::Sequent.new([Propose::Tree::Atom.new(:p),
+                                                Propose::Tree::Conjunction.new(
+                                                  Propose::Tree::Atom.new(:q),
+                                                  Propose::Tree::Atom.new(:r))
+                                               ],
+                                               Propose::Tree::Atom.new(:s))
+        end
+      end
+    end
   end
 end
