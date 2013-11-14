@@ -1,5 +1,8 @@
 require 'propose/parser'
 
+require 'propose/visitor'
+
+require 'propose/tree/node'
 require 'propose/tree/binary_operation'
 require 'propose/tree/conjunction'
 require 'propose/tree/disjunction'

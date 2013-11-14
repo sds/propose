@@ -2,7 +2,17 @@ module Propose::Tree
   # Declarative statement that can be either true or false.
   #
   # For example: "The sun is shining."
-  class Atom < Struct.new(:name)
+  class Atom < Node
+    attr_reader :name
+
+    def initialize(name)
+      @name = name
+    end
+
+    def ==(other)
+      super || @name == other.name
+    end
+
     def inspect
       "#<Atom #{name}>"
     end

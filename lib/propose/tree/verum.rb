@@ -2,7 +2,7 @@ require 'singleton'
 
 module Propose::Tree
   # Represents absolute tautological truth.
-  class Verum
+  class Verum < Node
     include Singleton
 
     def inspect

@@ -2,7 +2,7 @@ require 'singleton'
 
 module Propose::Tree
   # Represents a contradiction, or falseness.
-  class Falsum
+  class Falsum < Node
     include Singleton
 
     def inspect

@@ -3,7 +3,22 @@ module Propose::Tree
   # used to prove to a conclusion (another propositional formula).
   #
   # Sequents which the premises do not prove the conclusion are called invalid.
-  class Sequent < Struct.new(:premises, :conclusion)
+  class Sequent < Node
+    attr_reader :premises, :conclusion
+
+    def initialize(premises, conclusion)
+      @premises = premises
+      @conclusion = conclusion
+    end
+
+    def ==(other)
+      super || @premises == other.premises && @conclusion == other.conclusion
+    end
+
+    def children
+      premises + [conclusion]
+    end
+
     def inspect
       "#<Sequent [#{premises.map(&:inspect).join(', ')}] ⊢ #{conclusion.inspect}"
     end
