@@ -19,8 +19,8 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 1.9.3'
 
-  s.add_dependency 'colorize'
-  s.add_dependency 'treetop'
+  s.add_dependency 'colorize', '0.6.0'
+  s.add_dependency 'treetop', '1.4.15'
 
-  s.add_development_dependency 'rspec'
+  s.add_development_dependency 'rspec', '2.14.1'
 end
