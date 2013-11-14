@@ -1,6 +1,7 @@
 require 'propose/parser'
 
 require 'propose/visitor'
+require 'propose/atom_finder'
 
 require 'propose/tree/node'
 require 'propose/tree/binary_operation'
