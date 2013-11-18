@@ -1,4 +1,7 @@
 require 'propose/parser'
+require 'propose/repl'
+require 'propose/truth_table'
+require 'propose/version'
 
 require 'propose/visitor'
 require 'propose/atom_finder'
@@ -14,5 +17,3 @@ require 'propose/tree/unary_operation'
 require 'propose/tree/negation'
 require 'propose/tree/sequent'
 require 'propose/tree/verum'
-
-require 'propose/version'

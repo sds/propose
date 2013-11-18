@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'propose'
+
+Propose::REPL.new.run
