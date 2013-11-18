@@ -13,6 +13,10 @@ module Propose::Tree
       super || @name == other.name
     end
 
+    def evaluate(assignment)
+      assignment[self]
+    end
+
     def inspect
       "#<Atom #{name}>"
     end

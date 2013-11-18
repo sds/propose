@@ -5,6 +5,10 @@ module Propose::Tree
   class Verum < Node
     include Singleton
 
+    def evaluate(assignment)
+      true
+    end
+
     def inspect
       '#<Verum>'
     end

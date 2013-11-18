@@ -3,5 +3,9 @@ module Propose::Tree
     def initialize(sentence)
       super('¬', sentence)
     end
+
+    def evaluate(assignment)
+      !@formula.evaluate(assignment)
+    end
   end
 end

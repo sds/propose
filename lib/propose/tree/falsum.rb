@@ -5,6 +5,10 @@ module Propose::Tree
   class Falsum < Node
     include Singleton
 
+    def evaluate(assignment)
+      false
+    end
+
     def inspect
       '#<Falsum>'
     end
