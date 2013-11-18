@@ -5,5 +5,12 @@ module Propose::Tree
     def children
       []
     end
+
+    # Whether this node can be considered an unambiguous single lexical unit.
+    #
+    # This is used to omit unnecessary parentheses when rendering.
+    def literal?
+      false
+    end
   end
 end

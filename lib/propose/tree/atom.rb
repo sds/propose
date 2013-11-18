@@ -17,6 +17,10 @@ module Propose::Tree
       assignment[self]
     end
 
+    def literal?
+      true
+    end
+
     def inspect
       "#<Atom #{name}>"
     end

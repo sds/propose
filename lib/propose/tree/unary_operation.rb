@@ -16,12 +16,18 @@ module Propose::Tree
       [formula]
     end
 
+    def literal?
+      @formula.literal?
+    end
+
     def inspect
       "#<#{self.class.name.split('::').last} #{formula.inspect}>"
     end
 
     def to_s
-      "#{operator.to_s}(#{formula.to_s})"
+      output = [operator.to_s]
+      output << (formula.literal? ? formula.to_s : "(#{formula.to_s})")
+      output.join
     end
   end
 end

@@ -9,6 +9,10 @@ module Propose::Tree
       false
     end
 
+    def literal?
+      true
+    end
+
     def inspect
       '#<Falsum>'
     end

@@ -9,6 +9,10 @@ module Propose::Tree
       true
     end
 
+    def literal?
+      true
+    end
+
     def inspect
       '#<Verum>'
     end
