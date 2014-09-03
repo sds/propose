@@ -1,5 +1,11 @@
 # Propose
 
+[![Gem Version](https://badge.fury.io/rb/propose.svg)](http://badge.fury.io/rb/propose)
+[![Build Status](https://travis-ci.org/sds/propose.svg)](https://travis-ci.org/sds/propose)
+[![Code Climate](https://codeclimate.com/github/sds/propose.png)](https://codeclimate.com/github/sds/propose)
+[![Inline Docs](http://inch-ci.org/github/sds/propose.svg?branch=master)](http://inch-ci.org/github/sds/propose)
+[![Dependency Status](https://gemnasium.com/sds/propose.svg)](https://gemnasium.com/sds/propose)
+
 **Propose** is a playground for creating, manipulating, and verifying
 statements in [propositional logic](https://en.wikipedia.org/wiki/Propositional_calculus).
 
