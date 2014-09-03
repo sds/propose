@@ -1,7 +1,7 @@
 module Propose::Tree
   class Implication < BinaryOperation
     def initialize(left, right)
-      super('⇒', left, right)
+      super('→', left, right)
     end
 
     def evaluate(assignment)
