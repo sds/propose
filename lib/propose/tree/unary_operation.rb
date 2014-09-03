@@ -26,7 +26,7 @@ module Propose::Tree
 
     def to_s
       output = [operator.to_s]
-      output << (formula.literal? ? formula.to_s : "(#{formula.to_s})")
+      output << (formula.literal? ? formula.to_s : "(#{formula})")
       output.join
     end
   end

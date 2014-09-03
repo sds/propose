@@ -44,7 +44,7 @@ module Propose
         t << atoms + ['Result']
         t.add_separator
         tt.evaluations.each do |assignment, result|
-          t << assignment.values.map { |v| shorthand_value(v)} + [shorthand_value(result)]
+          t << assignment.values.map { |v| shorthand_value(v) } + [shorthand_value(result)]
         end
       end
 

@@ -5,7 +5,7 @@ module Propose::Tree
   class Falsum < Node
     include Singleton
 
-    def evaluate(assignment)
+    def evaluate(_assignment)
       false
     end
 

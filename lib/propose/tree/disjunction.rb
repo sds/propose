@@ -1,4 +1,5 @@
 module Propose::Tree
+  # A disjunction of two expressions, indicating at least one of them is true.
   class Disjunction < BinaryOperation
     def initialize(left, right)
       super('∨', left, right)

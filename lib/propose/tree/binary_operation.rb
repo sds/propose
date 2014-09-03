@@ -25,9 +25,9 @@ module Propose::Tree
 
     def to_s
       output = []
-      output << (left.literal? ? left.to_s : "(#{left.to_s})")
-      output << " #{operator.to_s} "
-      output << (right.literal? ? right.to_s : "(#{right.to_s})")
+      output << (left.literal? ? left.to_s : "(#{left})")
+      output << " #{operator} "
+      output << (right.literal? ? right.to_s : "(#{right})")
       output.join
     end
   end

@@ -1,4 +1,5 @@
 module Propose::Tree
+  # A conjunction of two expressions, indicating both are true.
   class Conjunction < BinaryOperation
     def initialize(left, right)
       super('∧', left, right)

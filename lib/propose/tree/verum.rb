@@ -5,7 +5,7 @@ module Propose::Tree
   class Verum < Node
     include Singleton
 
-    def evaluate(assignment)
+    def evaluate(_assignment)
       true
     end
 
