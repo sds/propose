@@ -1,0 +1,79 @@
+AllCops:
+  Include:
+    - '**/*.gemspec'
+    - '**/Gemfile'
+    - '**/*.rake'
+    - '**/Rakefile'
+
+# Allow developers to pass regexes as arguments without enclosing parens, e.g.
+#
+#   response.body.should match /some regex/
+AmbiguousRegexpLiteral:
+  Enabled: false
+
+# We prefer to outdent access modifiers to visually separate them from method
+# definitions. This makes the modifiers act as "separators" of sections of code
+# with different visibilities.
+AccessModifierIndentation:
+  Enabled: true
+  EnforcedStyle: outdent
+
+# Don't bother checking alignment of arguments to functions--there are too many
+# edge cases which look funny if we follow this rule strictly.
+AlignParameters:
+  Enabled: false
+
+# We use this pattern a lot in our code base.
+AssignmentInCondition:
+  Enabled: false
+
+# Don't require nested modules/classes to be on separate lines.
+ClassAndModuleChildren:
+  Enabled: false
+
+# Don't enforce using full lambda syntax for multi-line lambda blocks.
+Lambda:
+  Enabled: false
+
+# Avoid lines longer than 100 characters. The theory is that there are times
+# where forcing a wrap to 80 characters can actually harm readability, but if
+# you're hitting 100 there is probably a way to condense what you're trying to
+# express.
+LineLength:
+  Max: 100
+
+MethodLength:
+  CountComments: false
+  Max: 20
+
+# Prefer curly braces except for %i/%w/%W, since those return arrays.
+PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%': '{}'
+    '%i': '[]'
+    '%q': '{}'
+    '%Q': '{}'
+    '%r': '{}'
+    '%s': '()'
+    '%w': '[]'
+    '%W': '[]'
+    '%x': '{}'
+
+# Forcing the name of a predicate to `doctor?` makes it difficult to tell if it
+# is a "has-a" or a "is-a" predicate, so disable it.
+PredicateName:
+  Enabled: false
+
+# Disable enforcing `raise` keyword only inside `rescue` blocks. This check had
+# widespread disapproval.
+SignalException:
+  Enabled: false
+
+# Forcing the naming of arguments to `reduce` to be `|a, e|` isn't very useful.
+SingleLineBlockParams:
+  Enabled: false
+
+# This isn't fully baked yet, as it doesn't allow you to disable it for
+# multiline parameter lists
+TrailingComma:
+  Enabled: false

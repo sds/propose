@@ -10,7 +10,7 @@ module Propose
       while input = Readline.readline('> '.green, true)
         handle_input(input)
       end
-    rescue SignalException
+    rescue SignalException # rubocop:disable HandleExceptions
       # User hit Ctrl-C; close gracefully
     end
 
