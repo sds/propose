@@ -19,7 +19,7 @@ It comes with a simple command-line [REPL](https://en.wikipedia.org/wiki/REPL)
 
 ## Requirements
 
-Ruby 1.9.3+
+Ruby 2.0.0+
 
 ## Installing
 
