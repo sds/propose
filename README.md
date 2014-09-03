@@ -6,6 +6,15 @@ statements in [propositional logic](https://en.wikipedia.org/wiki/Propositional_
 It comes with a simple command-line [REPL](https://en.wikipedia.org/wiki/REPL)
 `propose`, which can answer questions about propositional statements.
 
+* [Requirements](#requirements)
+* [Installation](#installation)
+* [Writing Formulas](#writing-formulas)
+* [Commands](#commands)
+
+## Requirements
+
+Ruby 1.9.3+
+
 ## Installing
 
 ```bash
