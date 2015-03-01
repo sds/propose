@@ -37,15 +37,20 @@ module Propose
 
     def print_truth_table(statement)
       tt = Propose::TruthTable.new(statement)
-
       atoms = tt.formula_atoms.to_a
+      table = create_table(statement, atoms, tt)
 
+      puts table.to_s
+                .gsub('T', 'T'.green)
+                .gsub('F', 'F'.red)
+                .gsub(table.title, table.title.cyan)
+    end
+
+    def create_table(statement, atoms, tt)
       table = Terminal::Table.new do |t|
         t << atoms + ['Result']
         t.add_separator
-        tt.evaluations.each do |assignment, result|
-          t << assignment.values.map { |v| shorthand_value(v) } + [shorthand_value(result)]
-        end
+        add_truth_table_rows(t, tt)
       end
 
       table.title = statement.to_s
@@ -54,10 +59,13 @@ module Propose
         table.align_column(i, :center)
       end
 
-      puts table.to_s
-                .gsub('T', 'T'.green)
-                .gsub('F', 'F'.red)
-                .gsub(table.title, table.title.cyan)
+      table
+    end
+
+    def add_truth_table_rows(table, truth_table)
+      truth_table.evaluations.map do |assignment, result|
+        table << assignment.values.map { |v| shorthand_value(v) } + [shorthand_value(result)]
+      end
     end
 
     def shorthand_value(value)

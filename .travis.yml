@@ -4,6 +4,10 @@ rvm:
   - 2.0.0
   - 2.1
 
+before_script:
+  - git config --global user.email "travis@travis.ci"
+  - git config --global user.name "Travis CI"
+
 script:
   - bundle exec rspec
-  - bundle exec rubocop
+  - bundle exec overcommit --run
