@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'colorize', '~> 0.7'
   s.add_dependency 'terminal-table', '~> 1.4'
-  s.add_dependency 'treetop', '~> 1.5'
+  s.add_dependency 'treetop', '~> 1.5.0'
 
   s.add_development_dependency 'overcommit', '0.23.0' # Pin for Travis builds
   s.add_development_dependency 'rspec', '~> 3.0'
