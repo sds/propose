@@ -12,7 +12,8 @@ Gem::Specification.new do |s|
   s.summary     = 'Propositional logic sentence playground'
   s.description = 'Create, manipulate, and verify propositional logic sentences'
 
-  s.files         = Dir['{grammar,lib}/**/*.rb']
+  s.files         = Dir['lib/**/*.rb'] +
+                    Dir['grammar/**']
   s.executables   = ['propose']
   s.require_paths = ['lib']
 
