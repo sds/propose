@@ -23,9 +23,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'terminal-table', '~> 1.4'
   s.add_dependency 'treetop', '~> 1.5.0'
 
-  s.add_development_dependency 'overcommit', '0.23.0' # Pin for Travis builds
   s.add_development_dependency 'rspec', '~> 3.0'
   s.add_development_dependency 'rspec-its', '~> 1.0'
-  s.add_development_dependency 'rubocop', '0.29.1' # Pin for Travis builds
-  s.add_development_dependency 'travis', '~> 1.7'
 end
