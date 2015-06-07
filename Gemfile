@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gemspec
 
 # Run all pre-commit hooks via Overcommit during Travis runs
-gem 'overcommit', '0.24.0'
+gem 'overcommit', '0.25.0'
 
 # Pin tool versions (which are executed by Overcommit) for Travis builds
 gem 'rubocop', '0.32.0'
