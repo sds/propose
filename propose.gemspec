@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'colorize', '~> 0.7'
   s.add_dependency 'terminal-table', '~> 1.4'
-  s.add_dependency 'treetop', '~> 1.5.0'
+  s.add_dependency 'treetop', '~> 1.6.4'
 
   s.add_development_dependency 'rspec', '~> 3.0'
   s.add_development_dependency 'rspec-its', '~> 1.0'
