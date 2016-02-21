@@ -16,6 +16,7 @@ It comes with a simple command-line [REPL](https://en.wikipedia.org/wiki/REPL)
 * [Installation](#installation)
 * [Writing Formulas](#writing-formulas)
 * [Commands](#commands)
+* [License](#license)
 
 ## Requirements
 
@@ -134,3 +135,7 @@ formula as a command.
 | F | F | F |   T    |
 +---+---+---+--------+
 ```
+
+## License
+
+This project is released under the [MIT license](LICENSE.md).

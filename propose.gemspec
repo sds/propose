@@ -13,7 +13,9 @@ Gem::Specification.new do |s|
   s.description = 'Create, manipulate, and verify propositional logic sentences'
 
   s.files         = Dir['lib/**/*.rb'] +
-                    Dir['grammar/**']
+                    Dir['grammar/**'] +
+                    ['LICENSE.md']
+
   s.executables   = ['propose']
   s.require_paths = ['lib']
 
