@@ -13,11 +13,9 @@ module Propose
     class << self
       def parse(string)
         tree = parser.parse(string)
-        if tree
-          tree.to_ast
-        else
-          raise ParseError, parser.failure_reason
-        end
+        raise ParseError, parser.failure_reason unless tree
+
+        tree.to_ast
       end
 
     private

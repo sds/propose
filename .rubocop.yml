@@ -4,6 +4,7 @@ AllCops:
     - '**/Gemfile'
     - '**/*.rake'
     - '**/Rakefile'
+  TargetRubyVersion: 2.0 # Oldest version of Ruby this gem needs to support
 
 # Allow developers to pass regexes as arguments without enclosing parens, e.g.
 #
@@ -46,6 +47,9 @@ Style/ClassAndModuleChildren:
 Style/Lambda:
   Enabled: false
 
+Style/MultilineMethodCallIndentation:
+  Enabled: false
+
 # Spreading method chains over multiple lines shouldn't require you to force
 # indentation at 2 spaces.
 Style/MultilineOperationIndentation:
@@ -78,7 +82,8 @@ Style/SignalException:
 Style/SingleLineBlockParams:
   Enabled: false
 
-# This isn't fully baked yet, as it doesn't allow you to disable it for
-# multiline parameter lists
-Style/TrailingComma:
+Style/TrailingCommaInArguments:
+  Enabled: false
+
+Style/TrailingCommaInLiteral:
   Enabled: false
