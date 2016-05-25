@@ -73,7 +73,8 @@ describe Propose::Parser do
         it do
           should == Propose::Tree::Conjunction.new(
             Propose::Tree::Negation.new(Propose::Tree::Atom.new(:p)),
-            Propose::Tree::Atom.new(:q))
+            Propose::Tree::Atom.new(:q)
+          )
         end
       end
 
@@ -83,7 +84,8 @@ describe Propose::Parser do
         it do
           should == Propose::Tree::Conjunction.new(
             Propose::Tree::Atom.new(:p),
-            Propose::Tree::Negation.new(Propose::Tree::Atom.new(:q)))
+            Propose::Tree::Negation.new(Propose::Tree::Atom.new(:q))
+          )
         end
       end
 
@@ -95,7 +97,9 @@ describe Propose::Parser do
             Propose::Tree::Atom.new(:p),
             Propose::Tree::Conjunction.new(
               Propose::Tree::Atom.new(:q),
-              Propose::Tree::Atom.new(:r)))
+              Propose::Tree::Atom.new(:r)
+            )
+          )
         end
       end
 
@@ -106,8 +110,10 @@ describe Propose::Parser do
           should == Propose::Tree::Implication.new(
             Propose::Tree::Conjunction.new(
               Propose::Tree::Atom.new(:p),
-              Propose::Tree::Atom.new(:q)),
-            Propose::Tree::Atom.new(:r))
+              Propose::Tree::Atom.new(:q)
+            ),
+            Propose::Tree::Atom.new(:r)
+          )
         end
       end
 
@@ -118,10 +124,13 @@ describe Propose::Parser do
           should == Propose::Tree::Implication.new(
             Propose::Tree::Conjunction.new(
               Propose::Tree::Atom.new(:p),
-              Propose::Tree::Atom.new(:q)),
+              Propose::Tree::Atom.new(:q)
+            ),
             Propose::Tree::Conjunction.new(
               Propose::Tree::Atom.new(:r),
-              Propose::Tree::Atom.new(:s)))
+              Propose::Tree::Atom.new(:s)
+            )
+          )
         end
       end
 
@@ -132,10 +141,13 @@ describe Propose::Parser do
           should == Propose::Tree::Implication.new(
             Propose::Tree::Conjunction.new(
               Propose::Tree::Atom.new(:p),
-              Propose::Tree::Atom.new(:q)),
+              Propose::Tree::Atom.new(:q)
+            ),
             Propose::Tree::Disjunction.new(
               Propose::Tree::Atom.new(:r),
-              Propose::Tree::Atom.new(:s)))
+              Propose::Tree::Atom.new(:s)
+            )
+          )
         end
       end
     end
@@ -165,7 +177,8 @@ describe Propose::Parser do
         it do
           should == Propose::Tree::Disjunction.new(
             Propose::Tree::Negation.new(Propose::Tree::Atom.new(:p)),
-            Propose::Tree::Atom.new(:q))
+            Propose::Tree::Atom.new(:q)
+          )
         end
       end
 
@@ -175,7 +188,8 @@ describe Propose::Parser do
         it do
           should == Propose::Tree::Disjunction.new(
             Propose::Tree::Atom.new(:p),
-            Propose::Tree::Negation.new(Propose::Tree::Atom.new(:q)))
+            Propose::Tree::Negation.new(Propose::Tree::Atom.new(:q))
+          )
         end
       end
 
@@ -187,7 +201,9 @@ describe Propose::Parser do
             Propose::Tree::Atom.new(:p),
             Propose::Tree::Disjunction.new(
               Propose::Tree::Atom.new(:q),
-              Propose::Tree::Atom.new(:r)))
+              Propose::Tree::Atom.new(:r)
+            )
+          )
         end
       end
 
@@ -198,8 +214,10 @@ describe Propose::Parser do
           should == Propose::Tree::Implication.new(
             Propose::Tree::Disjunction.new(
               Propose::Tree::Atom.new(:p),
-              Propose::Tree::Atom.new(:q)),
-            Propose::Tree::Atom.new(:r))
+              Propose::Tree::Atom.new(:q)
+            ),
+            Propose::Tree::Atom.new(:r)
+          )
         end
       end
 
@@ -210,10 +228,13 @@ describe Propose::Parser do
           should == Propose::Tree::Implication.new(
             Propose::Tree::Disjunction.new(
               Propose::Tree::Atom.new(:p),
-              Propose::Tree::Atom.new(:q)),
+              Propose::Tree::Atom.new(:q)
+            ),
             Propose::Tree::Conjunction.new(
               Propose::Tree::Atom.new(:r),
-              Propose::Tree::Atom.new(:s)))
+              Propose::Tree::Atom.new(:s)
+            )
+          )
         end
       end
 
@@ -224,10 +245,13 @@ describe Propose::Parser do
           should == Propose::Tree::Implication.new(
             Propose::Tree::Disjunction.new(
               Propose::Tree::Atom.new(:p),
-              Propose::Tree::Atom.new(:q)),
+              Propose::Tree::Atom.new(:q)
+            ),
             Propose::Tree::Disjunction.new(
               Propose::Tree::Atom.new(:r),
-              Propose::Tree::Atom.new(:s)))
+              Propose::Tree::Atom.new(:s)
+            )
+          )
         end
       end
     end
@@ -257,7 +281,8 @@ describe Propose::Parser do
         it do
           should == Propose::Tree::Implication.new(
             Propose::Tree::Negation.new(Propose::Tree::Atom.new(:p)),
-            Propose::Tree::Atom.new(:q))
+            Propose::Tree::Atom.new(:q)
+          )
         end
       end
 
@@ -267,7 +292,8 @@ describe Propose::Parser do
         it do
           should == Propose::Tree::Implication.new(
             Propose::Tree::Atom.new(:p),
-            Propose::Tree::Negation.new(Propose::Tree::Atom.new(:q)))
+            Propose::Tree::Negation.new(Propose::Tree::Atom.new(:q))
+          )
         end
       end
 
@@ -279,7 +305,9 @@ describe Propose::Parser do
             Propose::Tree::Atom.new(:p),
             Propose::Tree::Implication.new(
               Propose::Tree::Atom.new(:q),
-              Propose::Tree::Atom.new(:r)))
+              Propose::Tree::Atom.new(:r)
+            )
+          )
         end
       end
 
@@ -291,7 +319,9 @@ describe Propose::Parser do
             Propose::Tree::Atom.new(:p),
             Propose::Tree::Conjunction.new(
               Propose::Tree::Atom.new(:q),
-              Propose::Tree::Atom.new(:r)))
+              Propose::Tree::Atom.new(:r)
+            )
+          )
         end
       end
 
@@ -303,7 +333,9 @@ describe Propose::Parser do
             Propose::Tree::Atom.new(:p),
             Propose::Tree::Disjunction.new(
               Propose::Tree::Atom.new(:q),
-              Propose::Tree::Atom.new(:r)))
+              Propose::Tree::Atom.new(:r)
+            )
+          )
         end
       end
     end
@@ -334,8 +366,8 @@ describe Propose::Parser do
           should == Propose::Tree::Sequent.new([Propose::Tree::Atom.new(:p),
                                                 Propose::Tree::Conjunction.new(
                                                   Propose::Tree::Atom.new(:q),
-                                                  Propose::Tree::Atom.new(:r))
-                                               ],
+                                                  Propose::Tree::Atom.new(:r)
+                                                )],
                                                Propose::Tree::Atom.new(:s))
         end
       end
