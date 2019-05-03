@@ -18,8 +18,3 @@ PreCommit:
 
   TrailingWhitespace:
     enabled: true
-
-  TravisLint:
-    enabled: true
-    command: ['bundle', 'exec', 'travis']
-    flags: ['lint', '--skip-version-check']
