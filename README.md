@@ -20,7 +20,7 @@ It comes with a simple command-line [REPL](https://en.wikipedia.org/wiki/REPL)
 
 ## Requirements
 
-Ruby 2.0.0+
+Ruby 2.4+
 
 ## Installing
 
