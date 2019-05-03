@@ -1,4 +1,6 @@
-$LOAD_PATH << File.expand_path('../lib', __FILE__)
+# frozen_string_literal: true
+
+$LOAD_PATH << File.expand_path('lib', __dir__)
 require 'propose/version'
 
 Gem::Specification.new do |s|
