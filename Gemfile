@@ -8,4 +8,4 @@ gemspec
 gem 'overcommit', '0.57.0'
 
 # Pin tool versions (which are executed by Overcommit) for Travis builds
-gem 'rubocop', '0.68.1'
+gem 'rubocop', '0.93.1'

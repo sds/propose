@@ -16,20 +16,20 @@ Lint/AmbiguousRegexpLiteral:
 Lint/AssignmentInCondition:
   Enabled: false
 
-# Avoid lines longer than 100 characters. The theory is that there are times
-# where forcing a wrap to 80 characters can actually harm readability, but if
-# you're hitting 100 there is probably a way to condense what you're trying to
-# express.
-Metrics/LineLength:
-  Max: 100
-
 Metrics/MethodLength:
   CountComments: false
   Max: 20
 
+# Avoid lines longer than 100 characters. The theory is that there are times
+# where forcing a wrap to 80 characters can actually harm readability, but if
+# you're hitting 100 there is probably a way to condense what you're trying to
+# express.
+Layout/LineLength:
+  Max: 100
+
 # Don't bother checking alignment of arguments to functions--there are too many
 # edge cases which look funny if we follow this rule strictly.
-Layout/AlignParameters:
+Layout/ParameterAlignment:
   Enabled: false
 
 # Don't require nested modules/classes to be on separate lines.
