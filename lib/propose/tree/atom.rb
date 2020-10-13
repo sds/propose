@@ -13,6 +13,14 @@ module Propose::Tree
       super || @name == other.name
     end
 
+    def eql?(other)
+      self == other
+    end
+
+    def hash
+      @name.hash
+    end
+
     def evaluate(assignment)
       assignment[self]
     end

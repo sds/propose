@@ -24,9 +24,11 @@ describe Propose::AtomFinder do
   end
 
   context 'when parse tree contains duplicate atoms' do
-    let(:atom) { Propose::Tree::Atom.new(:a) }
-    let(:tree) { Propose::Tree::Conjunction.new(atom, atom) }
+    let(:atom_a) { Propose::Tree::Atom.new('a') }
+    let(:atom_b) { Propose::Tree::Atom.new('a') }
+    let(:tree) { Propose::Tree::Conjunction.new(atom_a, atom_b) }
 
-    its(:atoms) { should == [atom].to_set }
+    its(:atoms) { should have_attributes(size: 1) }
+    its(:atoms) { should == [atom_a].to_set }
   end
 end
